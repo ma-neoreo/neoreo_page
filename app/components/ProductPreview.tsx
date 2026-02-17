@@ -1,102 +1,112 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Download, Star, Zap, Puzzle } from 'lucide-react'
+import { Trophy, Zap, Cpu, ArrowUpRight, BarChart3, Layout } from 'lucide-react'
 import GameplayDemo from '../components/GamePlaydemo'
 
 export default function ProductPreview() {
+  const features = [
+    {
+      icon: Trophy,
+      title: "Global Ranking",
+      desc: "Check your skills against players worldwide. Compete for the top spot.",
+      color: "text-amber-500",
+      bg: "bg-amber-50"
+    },
+    {
+      icon: Zap,
+      title: "Fast Gameplay",
+      desc: "Instant load times and smooth animations for a seamless experience.",
+      color: "text-blue-500",
+      bg: "bg-blue-50"
+    },
+    {
+      icon: Layout,
+      title: "Adaptive Design",
+      desc: "Optimized for both iPhone and iPad with responsive layouts.",
+      color: "text-indigo-500",
+      bg: "bg-indigo-50"
+    },
+    {
+      icon: BarChart3,
+      title: "Smart Analytics",
+      desc: "Track your progress and improve your strategy with detailed stats.",
+      color: "text-emerald-500",
+      bg: "bg-emerald-50"
+    }
+  ];
+
   return (
-    <section id="product" className="py-20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-gray-800">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-            게임 소개
+    <section id="features" className="py-24 bg-white relative overflow-hidden scroll-mt-28">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <span className="inline-block py-1 px-3 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-4">
+            Key Features
           </span>
-        </h2>
-        <div className="bg-white p-8 rounded-2xl shadow-2xl overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full opacity-10 -mr-32 -mt-32 transform rotate-45"></div>
-          <div className="flex flex-col lg:flex-row items-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 tracking-tight">
+            Designed for <br />
+            <span className="text-blue-600">Performance & Fun</span>
+          </h2>
+          <p className="text-slate-500 text-lg">
+            Area Tetris combines classic puzzle mechanics with modern design principles.
+            Experience a game that respects your time and intelligence.
+          </p>
+        </div>
+
+        {/* Feature Grid - Bento Style */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+          {features.map((feature, idx) => (
             <motion.div
-              className="lg:w-1/2 mb-8 lg:mb-0"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className="p-8 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
             >
-              {/* 기존 이미지 대신 GameplayDemo 컴포넌트를 표시 */}
-              <GameplayDemo />
+              <div className={`w-12 h-12 rounded-xl ${feature.bg} ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                <feature.icon size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors">
+                {feature.title}
+              </h3>
+              <p className="text-slate-500 leading-relaxed text-sm">
+                {feature.desc}
+              </p>
             </motion.div>
-            <div className="lg:w-1/2 lg:pl-12">
-              <motion.h3
-                className="text-3xl font-bold mb-6 text-gray-800"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+          ))}
+        </div>
+
+        {/* Gameplay Demo Integration */}
+        <div className="bg-slate-50 rounded-[2.5rem] p-8 md:p-12 mb-20 border border-slate-100 shadow-inner">
+          <GameplayDemo />
+        </div>
+
+        {/* CTA Banner */}
+        <div className="relative rounded-3xl overflow-hidden bg-blue-600 text-white p-12 md:p-20 text-center shadow-2xl shadow-blue-200">
+          {/* Abstract Circles */}
+          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 translate-x-1/2 translate-y-1/2"></div>
+
+          <div className="relative z-10 max-w-2xl mx-auto space-y-8">
+            <h3 className="text-3xl md:text-5xl font-bold">Ready to Play?</h3>
+            <p className="text-blue-100 text-lg">
+              Join thousands of players enjoying the new standard of puzzle games.
+              Available now on iOS.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+              <Link
+                href="https://apps.apple.com/kr/app/area-tetris/id6737521199"
+                target="_blank"
+                className="px-8 py-4 bg-white text-blue-600 rounded-full font-bold shadow-lg hover:shadow-xl hover:bg-slate-50 hover:-translate-y-1 transition-all flex items-center justify-center"
               >
-                AREA TETRIS
-              </motion.h3>
-              <motion.p
-                className="mb-6 text-gray-600 leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                고정된 영역을 블록으로 채워 나가는 독특한 퍼즐 게임입니다. 드래그 앤 드롭으로 블록을 배치하고, 전략적 사고로 높은 점수를 노려보세요!
-              </motion.p>
-              <motion.h4
-                className="text-xl font-semibold mb-4 text-gray-800"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-              >
-                주요 특징
-              </motion.h4>
-              <motion.ul
-                className="grid grid-cols-2 gap-4 mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-              >
-                <li className="flex items-center space-x-2 text-gray-700">
-                  <Puzzle className="w-5 h-5 text-blue-500" />
-                  <span>간단한 조작</span>
-                </li>
-                <li className="flex items-center space-x-2 text-gray-700">
-                  <Zap className="w-5 h-5 text-blue-500" />
-                  <span>깊이 있는 전략</span>
-                </li>
-                <li className="flex items-center space-x-2 text-gray-700">
-                  <Star className="w-5 h-5 text-blue-500" />
-                  <span>시각적 즐거움</span>
-                </li>
-                <li className="flex items-center space-x-2 text-gray-700">
-                  <Download className="w-5 h-5 text-blue-500" />
-                  <span>중독성 있는 플레이</span>
-                </li>
-              </motion.ul>
-              <motion.div
-                className="flex space-x-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1 }}
-              >
-                <Link
-                  href="/product"
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-full hover:from-blue-700 hover:to-indigo-700 transition duration-300 inline-block shadow-md hover:shadow-lg transform hover:-translate-y-1"
-                >
-                  자세히 보기
-                </Link>
-                <a
-                  href="https://apps.apple.com/kr/app/area-tetris/id6737521199"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-800 text-white px-6 py-3 rounded-full hover:bg-gray-900 transition duration-300 inline-block shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center"
-                >
-                  <Download className="w-5 h-5 mr-2" />
-                  iOS 다운로드
-                </a>
-              </motion.div>
+                <span>Download on App Store</span>
+                <ArrowUpRight size={18} className="ml-2" />
+              </Link>
             </div>
           </div>
         </div>

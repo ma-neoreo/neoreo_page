@@ -5,9 +5,9 @@ import Footer from './components/Footer'
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden">
       <Header />
-      <main className="flex-grow bg-gradient-to-b from-blue-50 via-indigo-50 to-white">
+      <main className="flex-grow">
         <CompanyIntro />
         <ProductPreview />
       </main>
@@ -15,4 +15,3 @@ export default function Home() {
     </div>
   )
 }
-
