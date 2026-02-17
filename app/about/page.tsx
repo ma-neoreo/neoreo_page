@@ -22,9 +22,9 @@ export default function About() {
               <span className="inline-block py-1.5 px-4 rounded-full bg-slate-100 text-navy font-bold text-xs tracking-widest uppercase mb-6">
                 About Neoreo
               </span>
-              <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-6 leading-tight">
-                우리는 <span className="text-primary">재미의 본질</span>에<br />
-                집착합니다.
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-8 leading-[1.15] break-keep">
+                <span className="text-primary">직관적 재미</span>를<br />
+                추구합니다.
               </h1>
               <p className="text-lg text-navy-muted leading-relaxed max-w-2xl mx-auto font-medium">
                 화려한 그래픽보다 중요한 건 '플레이하는 느낌'입니다.<br />

@@ -21,38 +21,44 @@ export default function CompanyIntro() {
   return (
     <>
       {/* ── Hero Section ── */}
-      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-white">
+      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-white text-navy">
         <DotGridBackground />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8 pt-24 pb-16">
-          <div className="max-w-4xl mx-auto text-center">
+        <div className="container relative z-10 mx-auto px-6 lg:px-8 pt-24 pb-16 text-center">
+          <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center justify-center space-x-2 bg-slate-100 px-4 py-1.5 rounded-full mb-8"
+              className="inline-flex items-center justify-center space-x-3 bg-white/80 backdrop-blur-md border border-slate-200 px-5 py-2 rounded-full mb-10 shadow-soft"
             >
-              <span className="w-2 h-2 bg-navy rounded-full" />
-              <span className="text-sm font-bold text-navy tracking-wide">NEOREO GAMES</span>
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+              </span>
+              <span className="text-sm font-black text-navy tracking-[0.2em] uppercase">NEOREO GAMES</span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-5xl md:text-7xl lg:text-[5.5rem] font-black tracking-tight text-navy leading-[1.1] mb-8"
+              className="text-5xl md:text-7xl lg:text-[8rem] font-black tracking-[calc(-0.05em)] leading-[0.95] mb-12 break-keep text-navy"
             >
-              불필요한 설계를 비우고<br />
-              <span className="text-primary italic">본능적인 재미를 채웁니다.</span>
+              직관적 재미를
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-shimmer italic pb-4 px-1">
+                추구합니다.
+              </span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl md:text-2xl text-navy-muted font-medium leading-relaxed max-w-2xl mx-auto mb-10"
+              className="text-lg md:text-xl md:text-2xl text-navy-muted font-medium leading-relaxed max-w-3xl mx-auto mb-12 break-keep"
             >
-              우리는 설명서가 필요 없는 직관을 믿습니다.<br />
+              우리는 설명서가 필요 없는 직관을 믿습니다.<br className="hidden md:block" />
               공부하지 않아도 손끝으로 바로 느껴지는 짜릿함. 그것이 우리가 만드는 게임의 본질입니다.
             </motion.p>
 
