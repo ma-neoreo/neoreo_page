@@ -29,18 +29,20 @@ export default function Logo({
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-full h-full"
                 >
+                    {/* Modern Abstract 'n' Logo */}
                     <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M10 6C8.89543 6 8 6.89543 8 8V32C8 33.1046 8.89543 34 10 34H14.5C15.6046 34 16.5 33.1046 16.5 32V20.5L25.5 33.4C26.1555 34.3406 27.234 34.9048 28.3813 34.9048H30C31.1046 34.9048 32 34.0094 32 32.9048V8.90476C32 7.8002 31.1046 6.90476 30 6.90476H25.5C24.3954 6.90476 23.5 7.8002 23.5 8.90476V20.4048L14.5 7.50476C13.8445 6.56419 12.766 6 11.6187 6H10Z"
-                        style={{ fill: `url(#${iconGradientId})` }}
+                        d="M11 12C9.34315 12 8 13.3431 8 15V32C8 33.6569 9.34315 35 11 35C12.6569 35 14 33.6569 14 32V23C14 19.134 17.134 16 21 16C24.866 16 28 19.134 28 23V32C28 33.6569 29.3431 35 31 35C32.6569 35 34 33.6569 34 32V23C34 15.8203 28.1797 10 21 10C17.0688 10 13.5358 11.7483 11.168 14.494C11.3916 13.7915 11.4552 12.0156 11 12Z"
+                        fill={`url(#${iconGradientId})`}
                     />
+                    {/* Floating Accent Dot/Pixel to signify 'Game/Digital' - Optional, adds uniqueness */}
+                    <circle cx="31" cy="11" r="3" fill={`url(#${iconGradientId})`} />
+
                     <defs>
-                        <linearGradient id="logo-gradient-primary" x1="8" y1="6" x2="32" y2="35" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="logo-gradient-primary" x1="8" y1="10" x2="34" y2="35" gradientUnits="userSpaceOnUse">
                             <stop stopColor="#4F46E5" /> {/* Indigo-600 */}
                             <stop offset="1" stopColor="#7C3AED" /> {/* Violet-600 */}
                         </linearGradient>
-                        <linearGradient id="logo-gradient-white" x1="8" y1="6" x2="32" y2="35" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="logo-gradient-white" x1="8" y1="10" x2="34" y2="35" gradientUnits="userSpaceOnUse">
                             <stop stopColor="#FFFFFF" />
                             <stop offset="1" stopColor="#E0E7FF" />
                         </linearGradient>
