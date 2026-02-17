@@ -19,9 +19,9 @@ export default function Header() {
   }, [])
 
   const navItems = [
-    { name: '소개', href: '#about' },
-    { name: '비전', href: '#vision' },
-    { name: '문의', href: '#contact' },
+    { name: '소개', href: '/about' },
+    { name: '비전', href: '/#vision' },
+    { name: '문의', href: '/#contact' },
   ]
 
   return (
