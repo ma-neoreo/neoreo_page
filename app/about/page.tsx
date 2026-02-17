@@ -2,13 +2,12 @@
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { motion } from 'framer-motion'
-import { Lightbulb, Target, Zap, Users, Code, Puzzle, Sparkles } from 'lucide-react'
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-}
+// Atoms
+import { Section, Container, FadeIn, AccentLine } from '../components/atoms'
+
+// Molecules
+import { ApproachItem } from '../components/molecules'
 
 export default function About() {
   return (
@@ -19,12 +18,7 @@ export default function About() {
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-50 pointer-events-none" />
           <div className="container mx-auto px-6 lg:px-8 relative z-10">
-            <motion.div
-              className="max-w-3xl mx-auto text-center"
-              initial={{ opacity: 0, y: -30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            <FadeIn direction="up" className="max-w-3xl mx-auto text-center">
               <span className="inline-block py-1.5 px-4 rounded-full bg-slate-100 text-navy font-bold text-xs tracking-widest uppercase mb-6">
                 About Neoreo
               </span>
@@ -36,25 +30,19 @@ export default function About() {
                 화려한 그래픽보다 중요한 건 '플레이하는 느낌'입니다.<br />
                 손끝에 전해지는 짜릿함을 위해 집요하게 고민합니다.
               </p>
-            </motion.div>
+            </FadeIn>
           </div>
         </section>
 
         {/* Story */}
         <section className="py-20 bg-slate-50">
           <div className="container mx-auto px-6 lg:px-8">
-            <motion.div
-              className="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100"
-              variants={fadeInUp}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
+            <FadeIn className="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100">
               <div className="space-y-12">
                 <div>
                   <h3 className="text-xl font-bold text-navy mb-4 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-primary">
-                      <Sparkles size={20} />
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" /><path d="M5 3v4" /><path d="M19 17v4" /><path d="M3 5h4" /><path d="M17 19h4" /></svg>
                     </div>
                     우리의 시작
                   </h3>
@@ -68,7 +56,7 @@ export default function About() {
                 <div>
                   <h3 className="text-xl font-bold text-navy mb-4 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600">
-                      <Target size={20} />
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>
                     </div>
                     우리의 기준
                   </h3>
@@ -88,7 +76,7 @@ export default function About() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </FadeIn>
           </div>
         </section>
 
@@ -103,27 +91,21 @@ export default function About() {
                 </h2>
               </div>
               <div className="md:w-2/3 space-y-16">
-                {[
-                  { title: '직관과 데이터의 조화', desc: '창의적인 영감을 핵심으로 삼되, 실제 플레이어의 손끝에서 나오는 데이터로 그 방향을 치열하게 검증합니다. 느낌에 의존하지 않고 즐거움을 수치로 증명합니다.' },
-                  { title: '감각적인 완성도', desc: '0.1초의 반응 속도부터 손끝에 전해지는 햅틱 피드백까지, 플레이어가 느끼는 모든 감각을 위해 끝없이 튜닝합니다. 최적화는 기술이 아니라 예의입니다.' },
-                  { title: '유연한 진화', desc: '고정된 정답은 없다고 믿습니다. 완벽한 기획서보다 빠른 프로토타입을 신뢰하며, 부딪히고 깨지는 과정 속에서 진짜 재미를 발굴해냅니다.' },
-                ].map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    className="relative pl-8"
-                    variants={fadeInUp}
-                    initial="initial"
-                    whileInView="animate"
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                  >
-                    <div className="absolute left-0 top-2 bottom-2 w-1 bg-primary/20 rounded-full" />
-                    <h3 className="text-2xl font-bold text-navy mb-4">{item.title}</h3>
-                    <p className="text-navy-muted text-lg leading-relaxed max-w-2xl font-medium">
-                      {item.desc}
-                    </p>
-                  </motion.div>
-                ))}
+                <ApproachItem
+                  title="직관과 데이터의 조화"
+                  desc="창의적인 영감을 핵심으로 삼되, 실제 플레이어의 손끝에서 나오는 데이터로 그 방향을 치열하게 검증합니다. 느낌에 의존하지 않고 즐거움을 수치로 증명합니다."
+                  delay={0}
+                />
+                <ApproachItem
+                  title="감각적인 완성도"
+                  desc="0.1초의 반응 속도부터 손끝에 전해지는 햅틱 피드백까지, 플레이어가 느끼는 모든 감각을 위해 끝없이 튜닝합니다. 최적화는 기술이 아니라 예의입니다."
+                  delay={0.1}
+                />
+                <ApproachItem
+                  title="유연한 진화"
+                  desc="고정된 정답은 없다고 믿습니다. 완벽한 기획서보다 빠른 프로토타입을 신뢰하며, 부딪히고 깨지는 과정 속에서 진짜 재미를 발굴해냅니다."
+                  delay={0.2}
+                />
               </div>
             </div>
           </div>
