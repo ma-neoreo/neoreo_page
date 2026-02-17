@@ -93,39 +93,38 @@ export default function About() {
         </section>
 
         {/* Approach */}
-        <section className="py-20">
+        <section className="py-24 border-t border-slate-100">
           <div className="container mx-auto px-6 lg:px-8">
-            <motion.h2
-              className="text-3xl md:text-4xl font-black text-navy text-center tracking-tight mb-16"
-              variants={fadeInUp}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
-              일하는 <span className="text-primary">방식</span>
-            </motion.h2>
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {[
-                { icon: Users, title: '다수결보다 데이터', desc: '감에 의존하지 않습니다. 실제 유저 테스트 결과가 우리의 나침반입니다.' },
-                { icon: Code, title: '타협 없는 마감', desc: '0.1초의 딜레이도 용납하지 않습니다. 최적화는 기본 예의입니다.' },
-                { icon: Puzzle, title: '빠른 실패, 더 빠른 개선', desc: '완벽한 기획서는 없습니다. 빠르게 만들고 부딪히며 다듬습니다.' },
-              ].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  className="bg-white p-8 rounded-2xl border border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group"
-                  variants={fadeInUp}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                >
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mb-6 group-hover:bg-navy group-hover:text-white transition-all duration-300">
-                    <item.icon size={24} />
-                  </div>
-                  <h3 className="text-lg font-bold text-navy mb-3">{item.title}</h3>
-                  <p className="text-navy-muted text-sm leading-relaxed">{item.desc}</p>
-                </motion.div>
-              ))}
+            <div className="flex flex-col md:flex-row gap-16">
+              <div className="md:w-1/3">
+                <h2 className="text-4xl font-black text-navy leading-tight tracking-tight">
+                  우리가 즐거움을<br />
+                  <span className="text-primary">증명하는 법</span>
+                </h2>
+              </div>
+              <div className="md:w-2/3 space-y-16">
+                {[
+                  { title: '직관과 데이터의 조화', desc: '창의적인 영감을 핵심으로 삼되, 실제 플레이어의 손끝에서 나오는 데이터로 그 방향을 치열하게 검증합니다. 느낌에 의존하지 않고 즐거움을 수치로 증명합니다.' },
+                  { title: '감각적인 완성도', desc: '0.1초의 반응 속도부터 손끝에 전해지는 햅틱 피드백까지, 플레이어가 느끼는 모든 감각을 위해 끝없이 튜닝합니다. 최적화는 기술이 아니라 예의입니다.' },
+                  { title: '유연한 진화', desc: '고정된 정답은 없다고 믿습니다. 완벽한 기획서보다 빠른 프로토타입을 신뢰하며, 부딪히고 깨지는 과정 속에서 진짜 재미를 발굴해냅니다.' },
+                ].map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="relative pl-8"
+                    variants={fadeInUp}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                  >
+                    <div className="absolute left-0 top-2 bottom-2 w-1 bg-primary/20 rounded-full" />
+                    <h3 className="text-2xl font-bold text-navy mb-4">{item.title}</h3>
+                    <p className="text-navy-muted text-lg leading-relaxed max-w-2xl font-medium">
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

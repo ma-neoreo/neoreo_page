@@ -73,8 +73,8 @@ export default function CompanyIntro() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl md:text-7xl lg:text-[5.5rem] font-black tracking-tight text-navy leading-[1.1] mb-8"
             >
-              복잡함은 덜어내고<br />
-              <span className="text-primary">재미만 남겼습니다.</span>
+              불필요한 설계를 비우고<br />
+              <span className="text-primary italic">본능적인 재미를 채웁니다.</span>
             </motion.h1>
 
             <motion.p
@@ -83,8 +83,8 @@ export default function CompanyIntro() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl md:text-2xl text-navy-muted font-medium leading-relaxed max-w-2xl mx-auto mb-10"
             >
-              "왜 게임이 공부가 되어야 하죠?"<br />
-              우리는 설명서가 필요 없는 직관적인 본능을 믿습니다.
+              우리는 설명서가 필요 없는 직관을 믿습니다.<br />
+              공부하지 않아도 손끝으로 바로 느껴지는 짜릿함. 그것이 우리가 만드는 게임의 본질입니다.
             </motion.p>
 
             <motion.div
@@ -113,147 +113,149 @@ export default function CompanyIntro() {
         </div>
       </section>
 
-      {/* ── About Section ── */}
-      <section id="about" className="py-28 bg-white relative scroll-mt-20">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <motion.h2
-                variants={fadeInUp}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                className="text-4xl font-black text-navy leading-tight"
-              >
-                뻔한 게임은<br />
-                만들지 않습니다.
-              </motion.h2>
-              <motion.p
-                variants={fadeInUp}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                className="text-lg text-navy-muted leading-relaxed"
-              >
-                수천 개의 게임이 쏟아지는 세상에서, 똑같은 문법을 답습하는 건 의미가 없습니다.
-                우리는 익숙한 장르 비틀기를 좋아하고, 한 번 시작하면 멈출 수 없는 몰입감을 만듭니다.
-              </motion.p>
-              <div className="pt-4 space-y-4">
-                {[
-                  { title: "새로운 규칙", desc: "남들이 안 하는 시도를 즐깁니다." },
-                  { title: "완벽한 마감", desc: "버그 없는 플레이, 부드러운 조작감에 집착합니다." },
-                  { title: "유저 존중", desc: "과도한 과금 유도 대신, 플레이 가치를 우선합니다." }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex gap-4">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2.5 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-bold text-navy">{item.title}</h4>
-                      <p className="text-navy-muted text-sm">{item.desc}</p>
+      {/* ── Values/Philosophy Section ── */}
+      <section id="about" className="py-32 bg-white relative scroll-mt-20 overflow-hidden">
+        {/* Decorative background text */}
+        <div className="absolute top-0 left-0 text-[15rem] font-black text-slate-50 select-none pointer-events-none -translate-x-20 -translate-y-20 leading-none">
+          CRAFT
+        </div>
+
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-20"
+            >
+              <h2 className="text-6xl md:text-8xl font-black text-navy leading-none tracking-tight mb-8">
+                당연한 것을<br />
+                <span className="text-primary italic">당연하지 않게.</span>
+              </h2>
+              <p className="text-xl md:text-2xl text-navy-muted font-medium max-w-2xl leading-relaxed">
+                수많은 게임이 쏟아지는 세상에서, 똑같은 방식을 반복하는 것은 지루합니다.
+                우리는 익숙한 장르의 문법을 비틀어, 기대하지 못한 놀라운 몰입을 만듭니다.
+              </p>
+            </motion.div>
+
+            <div className="grid gap-px bg-slate-100 border border-slate-100 overflow-hidden rounded-3xl">
+              {[
+                {
+                  title: "규칙의 재정의",
+                  desc: "남들이 가지 않은 길에서 새로운 재미의 가능성을 발견합니다. 우리는 익숙함을 파괴하고 새로움을 조립합니다.",
+                  tags: ["Innovation", "Rules"]
+                },
+                {
+                  title: "집요한 고집",
+                  desc: "플레이어가 느끼는 쾌적함은 타협할 수 없는 기준입니다. 0.1프레임의 오차도 허용하지 않는 집요함으로 완성합니다.",
+                  tags: ["Quality", "Precision"]
+                },
+                {
+                  title: "건강한 철학",
+                  desc: "숫자를 쫓는 과도한 경쟁보다, 다시 찾고 싶은 즐거운 기억을 남기는 데 집중합니다. 게임은 그래야 하니까요.",
+                  tags: ["User First", "Vision"]
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="bg-white p-8 md:p-12 hover:bg-slate-50 transition-colors duration-500 group">
+                  <div className="flex flex-col md:flex-row md:items-start gap-8">
+                    <div className="md:w-1/3">
+                      <div className="flex items-center gap-4 mb-4">
+                        <span className="text-sm font-bold text-primary font-mono tracking-tighter">0{idx + 1}</span>
+                        <div className="h-px flex-grow bg-slate-100 group-hover:bg-primary/20 transition-colors" />
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-black text-navy group-hover:text-primary transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                    </div>
+                    <div className="md:w-2/3 space-y-6">
+                      <p className="text-lg md:text-xl text-navy-muted leading-relaxed font-medium">
+                        {item.desc}
+                      </p>
+                      <div className="flex gap-2">
+                        {item.tags.map(tag => (
+                          <span key={tag} className="text-[10px] uppercase tracking-widest font-black px-2 py-1 rounded bg-slate-100 text-slate-400 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Abstract UI Pattern instead of AI Image */}
-            <div className="relative bg-slate-50 rounded-3xl p-8 border border-slate-100 aspect-square flex items-center justify-center overflow-hidden">
-              <div className="grid grid-cols-2 gap-4 w-full max-w-sm rotate-3 opacity-90">
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center aspect-square animate-float" style={{ animationDelay: '0s' }}>
-                  <Lightbulb size={32} className="text-amber-500 mb-3" />
-                  <span className="font-bold text-navy">상상</span>
                 </div>
-                <div className="bg-navy p-6 rounded-2xl shadow-xl flex flex-col items-center justify-center aspect-square translate-y-8 animate-float" style={{ animationDelay: '1s' }}>
-                  <Code size={32} className="text-white mb-3" />
-                  <span className="font-bold text-white">기술</span>
-                </div>
-                <div className="bg-primary p-6 rounded-2xl shadow-xl flex flex-col items-center justify-center aspect-square -translate-y-8 animate-float" style={{ animationDelay: '2s' }}>
-                  <Target size={32} className="text-white mb-3" />
-                  <span className="font-bold text-white">본질</span>
-                </div>
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center aspect-square animate-float" style={{ animationDelay: '3s' }}>
-                  <Sparkles size={32} className="text-primary mb-3" />
-                  <span className="font-bold text-navy">재미</span>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Vision Section ── */}
-      <section id="vision" className="py-28 bg-gradient-to-b from-surface-muted/60 to-white relative section-divider scroll-mt-20">
+      {/* ── Manifesto/Vision Section ── */}
+      <section id="vision" className="py-32 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={stagger}
-            className="max-w-3xl mx-auto text-center mb-20"
-          >
-            <motion.span
-              variants={fadeInUp}
-              className="inline-block py-1.5 px-4 rounded-full bg-surface-muted text-accent text-xs font-bold tracking-widest uppercase mb-6"
-            >
-              Our Vision
-            </motion.span>
-            <motion.h2
-              variants={fadeInUp}
-              className="text-4xl md:text-5xl font-black text-navy tracking-tight mb-6"
-            >
-              우리가 꿈꾸는
-              <br />
-              <span className="gradient-text">게임의 미래</span>
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-lg text-navy-muted leading-relaxed">
-              거창한 목표보다는 확실한 재미를 약속합니다.<br />
-              우리가 게임을 만드는 기준은 딱 하나입니다.
-            </motion.p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {[
-              {
-                icon: Gamepad2,
-                title: '직관적인 경험',
-                desc: '설명서 없이 바로 시작할 수 있어야 합니다. 튜토리얼은 짧게, 재미는 즉시.',
-              },
-              {
-                icon: Target,
-                title: '깊이 있는 몰입',
-                desc: '쉽게 시작하지만 마스터하긴 어렵게. 끝없이 도전 욕구를 자극합니다.',
-              },
-              {
-                icon: Sparkles,
-                title: '디테일의 미학',
-                desc: '터치 하나하나가 즐겁도록. 소리, 진동, 애니메이션까지 집요하게 다듬습니다.',
-              },
-              {
-                icon: Rocket,
-                title: '글로벌 스탠다드',
-                desc: '언어의 장벽 없이 전 세계 누구나 공감할 수 있는 재미를 만듭니다.',
-              },
-            ].map((item, idx) => (
+          <div className="flex flex-col lg:flex-row gap-16 items-start">
+            <div className="lg:w-1/3 sticky top-32">
               <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="flex gap-5 p-6 rounded-2xl hover:bg-white hover:shadow-card transition-all duration-300 group"
+                className="space-y-6"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                  <item.icon size={22} className="text-primary group-hover:text-white transition-colors" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-navy mb-2 group-hover:text-primary transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-navy-muted text-[15px] leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
+                <h2 className="text-5xl md:text-6xl font-black text-navy leading-[1.1] tracking-tighter">
+                  우리가 믿는<br />
+                  <span className="text-primary italic">즐거움의 본질.</span>
+                </h2>
+                <p className="text-navy-muted text-lg font-medium leading-relaxed">
+                  거창한 비전보다는 확실한 마감과<br />
+                  손끝에 닿는 감각에 집중합니다.
+                </p>
               </motion.div>
-            ))}
+            </div>
+
+            <div className="lg:w-2/3 space-y-24">
+              {[
+                {
+                  number: '01',
+                  title: '설명이 필요 없는 직관',
+                  desc: '학습은 노동이 아닙니다. 튜토리얼을 읽기 전에 먼저 손이 움직여야 하고, 1초 만에 감탄이 터져 나와야 합니다.',
+                },
+                {
+                  number: '02',
+                  title: '파고들수록 깊어지는 층위',
+                  desc: '시작은 쉽지만 마스터는 어렵게. 단순한 규칙 속에 무한한 변수와 선택의 즐거움을 설계합니다.',
+                },
+                {
+                  number: '03',
+                  title: '촉각에 닿는 디테일',
+                  desc: '버튼 하나를 누를 때의 소리, 진동, 그리고 0.01초의 반응 속도. 우리는 그 찰나의 기분을 위해 며칠을 고민합니다.',
+                },
+                {
+                  number: '04',
+                  title: '국경 없는 보편적 재미',
+                  desc: '문화와 언어를 넘어, 인간이라면 누구나 느낄 수 있는 원초적인 유희의 가치를 추구합니다.',
+                },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-100px' }}
+                  transition={{ duration: 0.7, delay: idx * 0.1 }}
+                  className="group"
+                >
+                  <div className="flex flex-col md:flex-row gap-8 md:items-baseline">
+                    <span className="text-6xl font-black text-slate-100 group-hover:text-primary/10 transition-colors duration-500 tabular-nums">
+                      {item.number}
+                    </span>
+                    <div className="space-y-4">
+                      <h3 className="text-2xl md:text-3xl font-black text-navy group-hover:text-primary transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      <p className="text-navy-muted text-lg md:text-xl leading-relaxed max-w-2xl font-medium">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
