@@ -40,7 +40,10 @@ export default function PrivacyPolicy() {
                   {
                     title: '3. 처리하는 개인정보의 항목',
                     content: '회사는 다음의 개인정보 항목을 처리하고 있습니다.',
-                    list: ['홈페이지 회원가입 및 관리 - 필수항목: 이메일'],
+                    list: [
+                      '회원 가입 및 관리 (필수): 이메일, 닉네임',
+                      '서비스 이용 시 자동 수집: 기기 정보(모델명, OS 버전), 접속 로그, 접속 IP, 게임 이용 기록(점수, 랭킹 등)',
+                    ],
                   },
                   {
                     title: '4. 개인정보의 파기절차 및 파기방법',
@@ -70,7 +73,16 @@ export default function PrivacyPolicy() {
                     extra: ['부서명: neoreo', '연락처: nch6807@neoreo.org'],
                   },
                   {
-                    title: '10. 개인정보 처리방침 변경',
+                    title: '10. 개인정보의 국외 이전',
+                    content: '회사는 안정적인 서비스 제공을 위해 개인정보를 국외에 위치한 클라우드 서버에 보관할 수 있습니다.',
+                    extra: [
+                      '이전받는 자: Supabase / Google Cloud',
+                      '이전 국가: 미국 등',
+                      '이전 항목: 서비스 이용 기록 및 회원 정보',
+                    ],
+                  },
+                  {
+                    title: '11. 개인정보 처리방침 변경',
                     content: '이 개인정보 처리방침은 2023년 1월 1일부터 적용됩니다.',
                   },
                 ].map((section, idx) => (

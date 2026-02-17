@@ -94,7 +94,7 @@ export default function TermsOfService() {
                             <h2 className="text-lg font-bold text-navy mb-3">제6조 (유료 콘텐츠의 구매 및 청약철회)</h2>
                             <ul className="space-y-2">
                                 {[
-                                    '회원이 구매한 유료 콘텐츠는 구매일로부터 7일 이내에 청약철회(환불)를 요청할 수 있습니다.',
+                                    '회원이 구매한 유료 콘텐츠는 구매일로부터 7일 이내에 청약철회(환불)를 요청할 수 있습니다. 단, 구매 즉시 사용되거나 적용되는 아이템의 경우 청약철회가 제한될 수 있습니다.',
                                     '모바일 기기를 통한 결제는 해당 앱 마켓의 결제 정책을 따릅니다.',
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-start gap-2 text-[15px]">
@@ -111,7 +111,8 @@ export default function TermsOfService() {
                             <div className="p-4 bg-surface-muted rounded-xl space-y-2 text-[15px] mb-3">
                                 <p>1. 버그 악용, 비정상적인 프로그램 사용</p>
                                 <p>2. 타인의 계정 정보 도용</p>
-                                <p>3. 타인에게 불쾌감을 주는 행위 및 서비스 운영 정책 위반</p>
+                                <p>3. 타인에게 불쾌감을 주는 행위 및 욕설, 비방, 음란한 내용의 닉네임 사용</p>
+                                <p>4. 기타 관계 법령에 위배되는 행위</p>
                             </div>
                             <p className="text-[15px]">
                                 회사는 회원이 상기 의무를 위반한 경우, 사전 통보 없이 해당 정보를 삭제하고 계정 정지 등의 조치를 취할 수 있습니다.
@@ -119,7 +120,23 @@ export default function TermsOfService() {
                         </section>
 
                         <section>
-                            <h2 className="text-lg font-bold text-navy mb-3">제8조 (저작권 등의 귀속)</h2>
+                            <h2 className="text-lg font-bold text-navy mb-3">제8조 (부적절한 콘텐츠의 관리)</h2>
+                            <ul className="space-y-2">
+                                {[
+                                    '회사는 건전한 서비스 환경 조성을 위해 회원이 생성한 닉네임 등 콘텐츠를 모니터링할 수 있습니다.',
+                                    '부적절한 콘텐츠(욕설, 비하, 음란물 등)가 발견되거나 신고가 접수될 경우, 회사는 즉시 해당 콘텐츠를 삭제하고 작성자의 이용을 제한하거나 영구 정지할 수 있습니다.',
+                                    '회원은 불쾌한 콘텐츠나 이용자를 발견 시 게임 내 신고 기능을 통해 회사에 알릴 수 있으며, 회사는 이를 신속히 처리합니다.',
+                                ].map((item, i) => (
+                                    <li key={i} className="flex items-start gap-2 text-[15px]">
+                                        <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2 className="text-lg font-bold text-navy mb-3">제9조 (저작권 등의 귀속)</h2>
                             <ul className="space-y-2">
                                 {[
                                     '회사가 제작한 서비스 내의 모든 콘텐츠에 대한 지식재산권은 회사에 귀속됩니다.',
@@ -134,7 +151,7 @@ export default function TermsOfService() {
                         </section>
 
                         <section>
-                            <h2 className="text-lg font-bold text-navy mb-3">제9조 (계약 해지 및 회원 탈퇴)</h2>
+                            <h2 className="text-lg font-bold text-navy mb-3">제10조 (계약 해지 및 회원 탈퇴)</h2>
                             <ul className="space-y-2">
                                 {[
                                     "회원은 언제든지 게임 내 '설정' 화면의 '계정 탈퇴' 기능을 통해 이용계약을 해지할 수 있습니다.",
@@ -149,7 +166,7 @@ export default function TermsOfService() {
                         </section>
 
                         <section>
-                            <h2 className="text-lg font-bold text-navy mb-3">제10조 (면책 조항)</h2>
+                            <h2 className="text-lg font-bold text-navy mb-3">제11조 (면책 조항)</h2>
                             <ul className="space-y-2">
                                 {[
                                     '회사는 불가항력적인 사유로 서비스를 제공할 수 없는 경우 책임이 면제됩니다.',
@@ -164,7 +181,7 @@ export default function TermsOfService() {
                         </section>
 
                         <section>
-                            <h2 className="text-lg font-bold text-navy mb-3">제11조 (준거법 및 재판관할)</h2>
+                            <h2 className="text-lg font-bold text-navy mb-3">제12조 (준거법 및 재판관할)</h2>
                             <ul className="space-y-2">
                                 {[
                                     '회사와 회원 간에 제기된 소송은 대한민국 법을 준거법으로 합니다.',
