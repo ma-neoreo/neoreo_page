@@ -12,21 +12,21 @@ const notoSansKr = Noto_Sans_KR({
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#ffffff',
+  themeColor: '#fafafc',
 }
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://neoreo.org'),
   title: {
     template: '%s | Neoreo',
-    default: 'Neoreo - 창의적인 게임 개발사',
+    default: 'Neoreo - 즐거움의 새로운 기준',
   },
-  description: '네오레오는 혁신적인 모바일 퍼즐 게임을 만드는 게임 개발사입니다. Area Tetris와 같은 독창적인 게임을 만나보세요.',
-  keywords: ['Neoreo', '네오레오', '게임 개발', '모바일 게임', '퍼즐 게임', 'Area Tetris'],
+  description: '네오레오는 독창적인 상상력과 기술력으로 즐거움의 새로운 기준을 만드는 게임 스튜디오입니다.',
+  keywords: ['Neoreo', '네오레오', '게임 개발', '모바일 게임', '게임 스튜디오', '인디게임'],
   authors: [{ name: 'Neoreo' }],
   openGraph: {
-    title: 'Neoreo - 창의적인 게임 개발사',
-    description: '네오레오는 혁신적인 모바일 퍼즐 게임을 만드는 게임 개발사입니다.',
+    title: 'Neoreo - 즐거움의 새로운 기준',
+    description: '네오레오는 독창적인 상상력과 기술력으로 즐거움의 새로운 기준을 만드는 게임 스튜디오입니다.',
     url: 'https://neoreo.org',
     siteName: 'Neoreo',
     locale: 'ko_KR',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Neoreo',
-    description: '창의적인 게임 개발사 네오레오',
+    description: '즐거움의 새로운 기준을 만드는 게임 스튜디오',
   },
   robots: {
     index: true,
@@ -50,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className="scroll-smooth">
-      <body className={`${inter.variable} ${notoSansKr.variable} antialiased min-h-screen bg-white text-gray-900 font-sans selection:bg-blue-100 selection:text-blue-900`}>
+      <body className={`${inter.variable} ${notoSansKr.variable} antialiased min-h-screen bg-[#fafafc] text-[#1a1a2e] font-sans`}>
         {children}
       </body>
     </html>

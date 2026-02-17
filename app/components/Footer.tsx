@@ -1,48 +1,61 @@
 import Link from 'next/link'
-import { Mail, Github, Twitter, Linkedin } from 'lucide-react'
+import { Mail } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer id="footer" className="bg-slate-50 text-slate-500 py-16 border-t border-slate-200">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12 mb-12">
-          {/* Use Flex layout for a minimal header-like footer top */}
+    <footer id="footer" className="bg-white border-t border-gray-100 py-16">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 mb-12">
+          {/* Left - Brand & Info */}
           <div className="space-y-4 max-w-sm">
-            <Link href="/" className="inline-block text-2xl font-black text-slate-900 tracking-tighter hover:text-blue-600 transition-colors">
-              neore<span className="text-blue-600">o</span>
+            <Link
+              href="/"
+              className="inline-flex items-center space-x-2 text-2xl font-black text-navy tracking-tight hover:text-primary transition-colors"
+            >
+              <div className="w-7 h-7 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+                <span className="text-white font-black text-sm leading-none">N</span>
+              </div>
+              <span>neoreo</span>
             </Link>
-            <div className="text-sm leading-relaxed text-slate-500 space-y-1">
-              <p><span className="font-semibold text-slate-700">CEO:</span> Chan-hyuk Na</p>
-              <p><span className="font-semibold text-slate-700">Business Registration:</span> 356-06-03635</p>
-              <p><span className="font-semibold text-slate-700">Email:</span> nch6807@neoreo.org</p>
-              <p className="pt-2 text-slate-400">Innovating the future of puzzle gaming.</p>
+            <div className="text-sm leading-relaxed text-navy-muted space-y-1.5">
+              <p><span className="font-semibold text-navy">대표:</span> 나찬혁</p>
+              <p><span className="font-semibold text-navy">사업자등록번호:</span> 356-06-03635</p>
+              <p className="flex items-center gap-1.5">
+                <Mail size={13} className="text-primary" />
+                <span>nch6807@neoreo.org</span>
+              </p>
             </div>
           </div>
 
+          {/* Right - Links */}
           <div className="flex items-center space-x-6">
-            <Link href="#company" className="text-sm font-medium hover:text-blue-600 transition-colors">About</Link>
-            <Link href="#features" className="text-sm font-medium hover:text-blue-600 transition-colors">Features</Link>
-            <Link href="#gameplay" className="text-sm font-medium hover:text-blue-600 transition-colors">Game</Link>
-            <a href="mailto:nch6807@neoreo.org" className="text-sm font-medium hover:text-blue-600 transition-colors">Contact</a>
+            <Link href="#about" className="text-sm font-medium text-navy-muted hover:text-primary transition-colors">
+              소개
+            </Link>
+            <Link href="#vision" className="text-sm font-medium text-navy-muted hover:text-primary transition-colors">
+              비전
+            </Link>
+            <a href="mailto:nch6807@neoreo.org" className="text-sm font-medium text-navy-muted hover:text-primary transition-colors">
+              문의
+            </a>
           </div>
         </div>
 
-        <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 gap-4">
+        <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-navy-muted gap-4">
           <div className="flex items-center space-x-6">
-            <Link href="/privacy-policy" className="hover:text-slate-600 transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-slate-600 transition-colors">Terms of Service</Link>
+            <Link href="/privacy-policy" className="hover:text-primary transition-colors">
+              개인정보처리방침
+            </Link>
+            <Link href="/terms" className="hover:text-primary transition-colors">
+              이용약관
+            </Link>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <span className="opacity-50">&copy; {currentYear} Neoreo Inc.</span>
-            <div className="flex space-x-3">
-              <a href="#" className="p-2 bg-white rounded-full shadow-sm hover:shadow-md hover:text-blue-600 transition-all border border-slate-100"><Twitter size={14} /></a>
-              <a href="#" className="p-2 bg-white rounded-full shadow-sm hover:shadow-md hover:text-slate-900 transition-all border border-slate-100"><Github size={14} /></a>
-              <a href="#" className="p-2 bg-white rounded-full shadow-sm hover:shadow-md hover:text-blue-700 transition-all border border-slate-100"><Linkedin size={14} /></a>
-            </div>
-          </div>
+          <span className="opacity-60">
+            &copy; {currentYear} Neoreo. All rights reserved.
+          </span>
         </div>
       </div>
     </footer>
