@@ -68,9 +68,7 @@ export default function CompanyIntro() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-              <ButtonPrimary href="mailto:nch6807@neoreo.org" showArrow>
-                프로젝트 문의하기
-              </ButtonPrimary>
+
               <ButtonOutline
                 onClick={() => {
                   document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })
@@ -169,36 +167,7 @@ export default function CompanyIntro() {
         </div>
       </Section>
 
-      {/* ── Contact CTA Section ── */}
-      <Section id="contact">
-        <div className="container mx-auto px-6 lg:px-8">
-          <FadeIn duration={0.8}>
-            <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-navy via-navy-light to-navy p-12 md:p-20 text-center">
-              {/* Subtle glow */}
-              <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-primary/20 rounded-full blur-[120px]" />
-              <div className="absolute bottom-0 right-1/4 w-[200px] h-[200px] bg-accent/15 rounded-full blur-[100px]" />
 
-              <div className="relative z-10 max-w-2xl mx-auto space-y-8">
-                <h3 className="text-3xl md:text-5xl font-black text-white tracking-tight">
-                  함께 만들어갈
-                  <br />
-                  이야기가 있나요?
-                </h3>
-                <p className="text-white/60 text-lg">
-                  협업, 제안, 또는 어떤 이야기든 환영합니다.
-                  <br />
-                  네오레오에 연락해 주세요.
-                </p>
-                <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-                  <ButtonPrimary href="mailto:nch6807@neoreo.org" variant="white" showArrow>
-                    이메일 보내기
-                  </ButtonPrimary>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </Section>
     </>
   )
 }

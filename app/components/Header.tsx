@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { AnimatePresence, motion } from 'framer-motion'
+import Logo from './Logo'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -21,7 +22,6 @@ export default function Header() {
   const navItems = [
     { name: '소개', href: '/about' },
     { name: '비전', href: '/#vision' },
-    { name: '문의', href: '/#contact' },
   ]
 
   return (
@@ -35,13 +35,10 @@ export default function Header() {
     >
       <div className="container mx-auto px-6 lg:px-8 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="group flex items-center space-x-2.5 z-50 relative">
-          <div className="w-9 h-9 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center transform group-hover:rotate-6 transition-all duration-300 shadow-glow-sm">
-            <span className="text-white font-black text-lg leading-none">N</span>
-          </div>
-          <span className="text-xl font-bold tracking-tight text-navy group-hover:text-primary transition-colors duration-300">
-            neoreo
-          </span>
+        <Link href="/" className="group flex items-center space-x-2.5 z-50 relative hover:scale-[1.02] transition-transform duration-300">
+          <Logo
+            textClassName="group-hover:text-primary transition-colors duration-300"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -57,13 +54,6 @@ export default function Header() {
           ))}
 
           <div className="w-px h-6 bg-gray-200 mx-3" />
-
-          <Link
-            href="mailto:nch6807@neoreo.org"
-            className="ml-2 px-6 py-2.5 bg-navy text-white text-sm font-semibold rounded-xl hover:bg-primary transition-all duration-300 shadow-soft hover:shadow-elevated hover:-translate-y-0.5 active:scale-[0.98]"
-          >
-            문의하기
-          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -95,15 +85,6 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-2">
-                <Link
-                  href="mailto:nch6807@neoreo.org"
-                  className="block w-full text-center py-3 bg-navy text-white font-semibold rounded-xl hover:bg-primary transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  문의하기
-                </Link>
-              </div>
             </motion.div>
           )}
         </AnimatePresence>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Mail } from 'lucide-react'
+import Logo from './Logo'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -12,12 +13,9 @@ export default function Footer() {
           <div className="space-y-4 max-w-sm">
             <Link
               href="/"
-              className="inline-flex items-center space-x-2 text-2xl font-black text-navy tracking-tight hover:text-primary transition-colors"
+              className="inline-flex items-center space-x-2 hover:opacity-80 transition-opacity"
             >
-              <div className="w-7 h-7 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-white font-black text-sm leading-none">N</span>
-              </div>
-              <span>neoreo</span>
+              <Logo />
             </Link>
             <div className="text-sm leading-relaxed text-navy-muted space-y-1.5">
               <p><span className="font-semibold text-navy">대표:</span> 나찬혁</p>
@@ -37,9 +35,6 @@ export default function Footer() {
             <Link href="#vision" className="text-sm font-medium text-navy-muted hover:text-primary transition-colors">
               비전
             </Link>
-            <a href="mailto:nch6807@neoreo.org" className="text-sm font-medium text-navy-muted hover:text-primary transition-colors">
-              문의
-            </a>
           </div>
         </div>
 
