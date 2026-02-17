@@ -8,7 +8,7 @@ import GameplayDemo from '../components/GamePlaydemo'
 
 export default function ProductPreview() {
   return (
-    <section id="product" className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <section id="product" className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-12 text-center text-gray-800">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">

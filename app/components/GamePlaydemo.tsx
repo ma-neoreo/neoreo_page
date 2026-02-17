@@ -43,39 +43,37 @@ export default function GameplayDemo() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="container mx-auto px-4">
-        <Slider {...settings}>
-          {slides.map((slide, index) => (
-            <div key={slide.id} className="px-4">
-              <motion.div
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-              >
-                <div className="aspect-video relative mb-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg overflow-hidden">
-                  <Image
-                    src={slide.image}
-                    alt={slide.title}
-                    layout="fill"
-                    objectFit="contain"
-                    priority={index === 0} // 첫 번째 이미지만 우선 로드
-                  />
+    <div className="w-full max-w-lg mx-auto">
+      <Slider {...settings}>
+        {slides.map((slide, index) => (
+          <div key={slide.id} className="px-2"> {/* Added padding for slider gap */}
+            <motion.div
+              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="aspect-video relative mb-6 bg-gray-100 rounded-lg overflow-hidden">
+                <Image
+                  src={slide.image}
+                  alt={slide.title}
+                  layout="fill"
+                  objectFit="contain"
+                  priority={index === 0}
+                />
+              </div>
+              <div className="flex items-start space-x-3">
+                <slide.icon className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-bold mb-2 text-gray-800">{slide.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{slide.description}</p>
                 </div>
-                <div className="flex items-start space-x-4">
-                  <slide.icon className="w-8 h-8 text-blue-500 flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-2xl font-bold mb-3 text-gray-800">{slide.title}</h3>
-                    <p className="text-lg text-gray-600 leading-relaxed">{slide.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-    </section>
+              </div>
+            </motion.div>
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 }

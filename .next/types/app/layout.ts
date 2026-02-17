@@ -1,4 +1,4 @@
-// File: /Users/kik/Desktop/네오레오/홈페이지/neoreo homepage/app/layout.tsx
+// File: /Users/kik/Documents/ma-neoreo/neoreo-홈페이지/neoreo homepage/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

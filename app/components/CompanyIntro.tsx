@@ -6,9 +6,9 @@ import { Puzzle, Zap, Users } from 'lucide-react'
 
 export default function CompanyIntro() {
   return (
-    <section id="about" className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+    <section id="about" className="py-20">
       <div className="container mx-auto px-4">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -30,7 +30,7 @@ export default function CompanyIntro() {
             { icon: Zap, title: "혁신 기술", description: "최신 기술을 활용한 게임 개발로 산업을 선도합니다." },
             { icon: Users, title: "플레이어 중심", description: "사용자 경험을 최우선으로 생각하는 게임을 만듭니다." },
           ].map((item, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ export default function CompanyIntro() {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
