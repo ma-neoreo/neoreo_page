@@ -1,0 +1,14 @@
+<svg width="1242" height="2688" viewBox="0 0 1242 2688" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1242" height="2688" fill="#1A1A2E"/>
+    <g transform="translate(433.5, 1294) scale(2.5)">
+        <defs>
+            <linearGradient id="logo-gradient-white" x1="8" y1="10" x2="34" y2="35" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFFFFF" />
+                <stop offset="1" stop-color="#E0E7FF" />
+            </linearGradient>
+        </defs>
+        <path d="M11 12C9.34315 12 8 13.3431 8 15V32C8 33.6569 9.34315 35 11 35C12.6569 35 14 33.6569 14 32V23C14 19.134 17.134 16 21 16C24.866 16 28 19.134 28 23V32C28 33.6569 29.3431 35 31 35C32.6569 35 34 33.6569 34 32V23C34 15.8203 28.1797 10 21 10C17.0688 10 13.5358 11.7483 11.168 14.494C11.3916 13.7915 11.4552 12.0156 11 12Z" fill="url(#logo-gradient-white)" />
+        <circle cx="31" cy="11" r="3" fill="url(#logo-gradient-white)" />
+        <text x="48" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="900" font-size="24" fill="#FFFFFF" letter-spacing="-0.5">neoreo</text>
+    </g>
+</svg>
